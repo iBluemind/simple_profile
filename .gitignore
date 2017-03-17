@@ -5,9 +5,12 @@
 /build
 *.pyc
 *.sock
-/venv
-/upload
 /simple_profile/static/libs
 /simple_profile/static/gen
 /simple_profile/static/.webassets-cache/
 /simple_profile/__pycache__/
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

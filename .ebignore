@@ -1,0 +1,10 @@
+.git/
+.idea/
+.DS_Store
+*.iml
+*.pyc
+*.sock
+simple_profile/static/libs/
+simple_profile/static/gen/
+simple_profile/static/.webassets-cache/
+simple_profile/__pycache__/

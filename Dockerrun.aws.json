@@ -1,0 +1,75 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "volumes": [
+    {
+      "name": "nginx-proxy-conf",
+      "host": {
+        "sourcePath": "/var/app/current/proxy/conf.d"
+      }
+    }
+  ],
+  "containerDefinitions": [
+    {
+      "name": "app",
+      "image": "aksmj8855/simple_profile",
+      "environment": [
+        {
+          "name": "AWS_ACCESS_KEY_ID",
+          "value": ""
+        },
+        {
+          "name": "AWS_SECRET_ACCESS_KEY",
+          "value": ""
+        },
+        {
+          "name": "FLASKS3_BUCKET_NAME",
+          "value": ""
+        },
+        {
+          "name": "MYSQL_HOST",
+          "value": ""
+        },
+        {
+          "name": "MYSQL_PORT",
+          "value": ""
+        },
+        {
+          "name": "MYSQL_USER",
+          "value": ""
+        },
+        {
+          "name": "MYSQL_PASSWORD",
+          "value": ""
+        },
+        {
+          "name": "MYSQL_DATABASE",
+          "value": ""
+        }
+      ],
+      "essential": true,
+      "memory": 128
+    },
+    {
+      "name": "rproxy",
+      "image": "library/nginx",
+      "essential": true,
+      "memory": 128,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        }
+      ],
+      "links": [
+        "app"
+      ],
+      "mountPoints": [
+        {
+          "sourceVolume": "nginx-proxy-conf",
+          "containerPath": "/etc/nginx/conf.d",
+          "readOnly": true
+        }
+      ]
+    }
+  ]
+}
