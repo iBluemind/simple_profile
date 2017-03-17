@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container" style="">
+        <h1>
+            My Simple Profile
+        </h1>
+
+        <div id="profile">
+            My name is Manjong Han<br>
+            Contact me(aksmj8855@gmail.com)<br>
+            My job is Software Developer<br>
+        </div>
+
+        <div id="my-photos">
+            <h2>My Photos...</h2>
+
+            {% for photo in photos %}
+                <img src="{{ url_for('static', filename=photo.path) }}">
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
