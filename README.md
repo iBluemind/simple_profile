@@ -12,7 +12,7 @@ This project is based on:
 * PyMySQL
 * SQLAlchemy
 
-and using these:
+and use these:
 
 * Alembic
 * uWSGI
@@ -48,7 +48,7 @@ You can minify CSS files, Javascript files using following command:
 $ flask build_compressed_assets
 ```
 
-The static file resources can be uploaded Amazon S3 using below command:
+The static resources can be uploaded on Amazon S3 using below command:
 
 ```sh
 $ flask upload_to_s3
@@ -70,7 +70,7 @@ Or simply, you can run ```scripts/install.sh``` like below:
 $ scripts/install.sh
 ```
 
-This application can be start with below command.  
+This application can be started with below command.  
 Before you start this app, check the whether shell environment variables were set.
 
 ```sh
@@ -99,12 +99,13 @@ $ eb create
 
 ## TroubleShooting
 
-* Can't execute ```flask``` CLI commands  
-Set the shell environment ```FLASK_APP``` like below:
+* Can't execute ```flask``` CLI commands!
 
-```sh
-$ export FLASK_APP=`pwd`/run.py
-```
+    Set the shell environment variable ```FLASK_APP``` like below:
+
+    ```sh
+    $ export FLASK_APP=`pwd`/run.py
+    ```
 
 
 ## License
